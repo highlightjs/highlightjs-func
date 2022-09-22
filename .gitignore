@@ -66,3 +66,4 @@ typings/
 
 # We use it to build stuff
 highlightjs/
+!dist/
