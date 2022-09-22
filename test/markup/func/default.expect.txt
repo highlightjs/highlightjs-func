@@ -1,0 +1,53 @@
+<span class="hljs-keyword">#include <span class="hljs-string">&quot;../&quot;</span>;</span>
+<span class="hljs-meta">#pragma <span class="hljs-keyword">version</span> <span class="hljs-operator">&gt;=</span><span class="hljs-number">1.0.0</span>;</span>
+
+<span class="hljs-variable constant_">global</span> <span class="hljs-type">int</span> k_const<span class="hljs-puncuation">;</span>
+<span class="hljs-variable constant_">global</span> <span class="hljs-type">tuple</span> k_if<span class="hljs-puncuation">;</span>
+<span class="hljs-variable constant_">const</span> <span class="hljs-type">int</span> k_int <span class="hljs-operator">=</span> <span class="hljs-number">1</span><span class="hljs-puncuation">;</span>
+
+<span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span> <span class="hljs-function">recv_internal</span><span class="hljs-puncuation">(</span><span class="hljs-type">int</span> my_balance<span class="hljs-puncuation">,</span> <span class="hljs-type">int</span> msg_value<span class="hljs-puncuation">,</span> <span class="hljs-type">cell</span> in_msg_full<span class="hljs-puncuation">,</span> <span class="hljs-type">slice</span> in_msg_body<span class="hljs-puncuation">)</span> <span class="hljs-keyword">impure</span> <span class="hljs-puncuation">{</span>
+    <span class="hljs-type">slice</span> cs <span class="hljs-operator">=</span> in_msg_full<span class="hljs-puncuation">.</span><span class="hljs-function">begin_parse</span><span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">;</span>
+    <span class="hljs-type">int</span> flags <span class="hljs-operator">=</span> cs<span class="hljs-operator">~</span><span class="hljs-function">load_uint</span><span class="hljs-puncuation">(</span><span class="hljs-number">0x4_1_0</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">;</span>
+
+    <span class="hljs-keyword">if</span> <span class="hljs-puncuation">(</span><span class="hljs-puncuation">(</span>flags <span class="hljs-operator">&amp;</span> <span class="hljs-number">1</span><span class="hljs-puncuation">)</span> <span class="hljs-operator">==</span> <span class="hljs-literal">true</span><span class="hljs-puncuation">)</span> <span class="hljs-puncuation">{</span> <span class="hljs-comment">;; ignore all bounced messages</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">;</span>
+    <span class="hljs-puncuation">}</span>
+
+    <span class="hljs-type">slice</span> sender_address <span class="hljs-operator">=</span> cs<span class="hljs-operator">~</span><span class="hljs-function">load_msg_addr</span><span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">;</span>
+
+    <span class="hljs-comment">{-
+    <span class="hljs-comment">{-
+    test - is test
+    -}</span>
+    -}</span>
+
+    <span class="hljs-comment">;; Send message</span>
+    <span class="hljs-type">var</span> message <span class="hljs-operator">=</span> <span class="hljs-function">begin_cell</span><span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span>
+        <span class="hljs-puncuation">.</span><span class="hljs-function">store_uint</span><span class="hljs-puncuation">(</span><span class="hljs-number">0x18</span><span class="hljs-puncuation">,</span> <span class="hljs-number">6</span><span class="hljs-puncuation">)</span>
+        <span class="hljs-puncuation">.</span><span class="hljs-function">store_slice</span><span class="hljs-puncuation">(</span>sender_address<span class="hljs-puncuation">)</span>
+        <span class="hljs-puncuation">.</span><span class="hljs-function">store_coins</span><span class="hljs-puncuation">(</span><span class="hljs-number">0</span><span class="hljs-puncuation">)</span>
+        <span class="hljs-puncuation">.</span><span class="hljs-function">store_uint</span><span class="hljs-puncuation">(</span><span class="hljs-number">0</span><span class="hljs-puncuation">,</span> <span class="hljs-number">1</span> <span class="hljs-operator">+</span> <span class="hljs-number">4</span> <span class="hljs-operator">+</span> <span class="hljs-number">4</span> <span class="hljs-operator">+</span> <span class="hljs-number">64</span> <span class="hljs-operator">+</span> <span class="hljs-number">32</span> <span class="hljs-operator">+</span> <span class="hljs-number">1</span> <span class="hljs-operator">+</span> <span class="hljs-number">1</span><span class="hljs-puncuation">)</span>
+        <span class="hljs-puncuation">.</span><span class="hljs-function">store_slice</span><span class="hljs-puncuation">(</span><span class="hljs-string">&quot;Hello, world!&quot;s</span><span class="hljs-puncuation">)</span>
+        <span class="hljs-puncuation">.</span><span class="hljs-function">end_cell</span><span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">;</span>
+
+    <span class="hljs-function">send_raw_message</span><span class="hljs-puncuation">(</span>message<span class="hljs-puncuation">,</span> <span class="hljs-number">64</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">;</span>
+
+    <span class="hljs-comment">;; Update counter</span>
+    <span class="hljs-type">var</span> cs <span class="hljs-operator">=</span> <span class="hljs-function">get_data</span><span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">.</span><span class="hljs-function">begin_parse</span><span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">;</span>
+    <span class="hljs-type">var</span> counter <span class="hljs-operator">=</span> data<span class="hljs-operator">~</span><span class="hljs-function">load_uint</span><span class="hljs-puncuation">(</span><span class="hljs-number">32</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">;</span>
+
+    <span class="hljs-function">store_data</span><span class="hljs-puncuation">(</span>
+        <span class="hljs-function">begin_cell</span><span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span>
+            <span class="hljs-puncuation">.</span><span class="hljs-function">store_uint</span><span class="hljs-puncuation">(</span>counter <span class="hljs-operator">+</span> <span class="hljs-number">1</span><span class="hljs-puncuation">,</span> <span class="hljs-number">32</span><span class="hljs-puncuation">)</span>
+        <span class="hljs-puncuation">.</span><span class="hljs-function">end_cell</span><span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span>
+    <span class="hljs-puncuation">)</span><span class="hljs-puncuation">;</span>
+<span class="hljs-puncuation">}</span>
+
+<span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span> <span class="hljs-function">recv_external</span><span class="hljs-puncuation">(</span><span class="hljs-type">slice</span> in_msg<span class="hljs-puncuation">)</span> <span class="hljs-keyword">impure</span> <span class="hljs-puncuation">{</span>
+    <span class="hljs-function">throw</span><span class="hljs-puncuation">(</span><span class="hljs-number">0xffff</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">;</span>
+<span class="hljs-puncuation">}</span>
+
+<span class="hljs-type">int</span> <span class="hljs-function">counter</span><span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span> <span class="hljs-keyword">method_id</span> <span class="hljs-puncuation">{</span>
+    <span class="hljs-type">var</span> data <span class="hljs-operator">=</span> <span class="hljs-function">get_data</span><span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">.</span><span class="hljs-function">begin_parse</span><span class="hljs-puncuation">(</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">;</span>
+    <span class="hljs-keyword">return</span> data<span class="hljs-operator">~</span><span class="hljs-function">load_uint</span><span class="hljs-puncuation">(</span><span class="hljs-number">32</span><span class="hljs-puncuation">)</span><span class="hljs-puncuation">;</span>
+<span class="hljs-puncuation">}</span>

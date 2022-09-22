@@ -1,0 +1,32 @@
+{
+  "name": "highlightjs-func",
+  "version": "0.1.0",
+  "description": "highlight.js syntax definition for TON's FunC language",
+  "main": "src/index.js",
+  "type": "module",
+  "files": [
+    "dist/func.min.js"
+  ],
+  "keywords": [
+    "FunC",
+    "TON",
+    "Telegram",
+    "highlight.js",
+    "highlightjs",
+    "syntax"
+  ],
+  "author": "Nikita Sobolev <mail@sobolevn.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sobolevn/highlightjs-func/issues"
+  },
+  "homepage": "https://github.com/sobolevn/highlightjs-func#readme",
+  "scripts": {
+    "test": "mocha --reporter spec --reporter-option maxDiffSize=0"
+  },
+  "devDependencies": {
+    "highlight.js": "^11.6.0",
+    "mocha": "^10.0.0",
+    "should": "^13.2.3"
+  }
+}
