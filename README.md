@@ -2,8 +2,8 @@
 
 [![test](https://github.com/sobolevn/highlightjs-func/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/sobolevn/highlightjs-func/actions/workflows/test.yml)
 
-For more about `Func`, see https://ton.org/docs
-For more about `highlight.js`, see https://highlightjs.org/
+- For more about `Func`, see https://ton.org/docs
+- For more about `highlight.js`, see https://highlightjs.org/
 
 ### Usage
 
