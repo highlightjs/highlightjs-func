@@ -7,6 +7,9 @@
   "files": [
     "dist/func.min.js"
   ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "keywords": [
     "FunC",
     "TON",
