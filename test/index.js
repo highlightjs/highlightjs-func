@@ -1,10 +1,15 @@
 import path from 'path'
-import { readdir, readFile } from 'node:fs/promises'
+import fs from 'fs'
+import { promisify } from 'util'
 
 import 'should'
 import hljs from 'highlight.js'
 
 import hljsDefineLanguages from '../src/index.js'
+
+// This is required to support node@12
+const readdir = promisify(fs.readdir)
+const readFile = promisify(fs.readFile)
 
 hljsDefineLanguages(hljs)  // install all our languages
 const markupTests = path.join(path.resolve(), 'test', 'markup')

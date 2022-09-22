@@ -31,8 +31,6 @@ If you're not using a build system and just want to embed this in your webpage:
 
 ### Useful links
 
-- https://github.com/pygments/pygments/commit/fcfcdcd7b3783194d1bb3a868fe989b0c79c1262
-- https://github.com/ton-blockchain/intellij-ton/tree/main/src/main/grammars
 - https://highlightjs.readthedocs.io/en/latest/language-guide.html
 - https://github.com/highlightjs/highlight.js/blob/main/docs/language-contribution.rst
-
+- https://github.com/highlightjs/highlight.js/blob/main/extra/3RD_PARTY_QUICK_START.md
