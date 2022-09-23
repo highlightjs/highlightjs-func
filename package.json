@@ -1,6 +1,6 @@
 {
   "name": "highlightjs-func",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "highlight.js syntax definition for TON's FunC language",
   "main": "src/index.js",
   "type": "module",
@@ -21,9 +21,9 @@
   "author": "Nikita Sobolev <mail@sobolevn.me>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sobolevn/highlightjs-func/issues"
+    "url": "https://github.com/highlightjs/highlightjs-func/issues"
   },
-  "homepage": "https://github.com/sobolevn/highlightjs-func#readme",
+  "homepage": "https://github.com/highlightjs/highlightjs-func#readme",
   "scripts": {
     "test": "mocha --reporter spec --reporter-option maxDiffSize=0"
   },

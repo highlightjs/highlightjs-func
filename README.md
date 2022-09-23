@@ -1,6 +1,6 @@
 # `highlight.js` syntax definition for `FunC`
 
-[![test](https://github.com/sobolevn/highlightjs-func/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/sobolevn/highlightjs-func/actions/workflows/test.yml)
+[![test](https://github.com/highlightjs/highlightjs-func/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/highlightjs/highlightjs-func/actions/workflows/test.yml)
 
 - For more about `FunC`, see https://ton.org/docs
 - For more about `highlight.js`, see https://highlightjs.org/

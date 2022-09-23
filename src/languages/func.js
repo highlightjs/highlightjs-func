@@ -27,6 +27,7 @@ export default function(hljs) {
         'while', 'do', 'until', 'repeat',
         'return', 'impure', 'method_id',
         'forall', 'asm', 'inline', 'inline_ref|10',
+        'const', 'global',
       ],
       'literal': ['true', 'false'],
       'type': ['var', 'int', 'slice', 'tuple', 'cell', 'builder', 'cont', '_'],
@@ -35,9 +36,9 @@ export default function(hljs) {
 
     'contains': [
       // Comments
-      { 'className': 'comment', 'begin': ';;', 'end': /(?=\n)/ },
+      { 'scope': 'comment', 'begin': ';;', 'end': /(?=\n)/ },
       {
-        'className': 'comment',
+        'scope': 'comment',
         'begin': '{-',
         'end': '-}',
         'contains': ['self'],
@@ -45,41 +46,53 @@ export default function(hljs) {
 
       // Directives
       {
-        'className': 'meta',
+        'scope': 'meta',
         'begin': /#pragma/,
         'end': /;/,
         'contains': [
-          { 'className': 'keyword', 'match': /version|not-version/ },
+          { 'scope': 'keyword', 'match': /version|not-version/ },
           {
-            'className': 'operator',
+            'scope': 'operator',
             'match': hljs.regex.either(/>=/, /<=/, /=/, />/, /</, /\^/),
           },
           {
-            'className': 'number',
+            'scope': 'number',
             'match': /([0-9]+)(.[0-9]+)?(.[0-9]+)?/
           },
         ],
       },
       {
-        'className': 'keyword',
+        'scope': 'keyword',
         'begin': /#include/,
         'end': /;/,
         'contains': [
-          { 'className': 'string', 'match': STRING },
+          { 'scope': 'string', 'match': STRING },
         ],
       },
 
       // Primitives
-      { 'className': 'number', 'match': NUMBER },
-      { 'className': 'string', 'match': STRING },
+      { 'scope': 'number', 'match': NUMBER },
+      { 'scope': 'string', 'match': STRING },
 
       // Constans / Variables / Functions
-      { 'className': 'function', 'match': new RegExp(IDENTIFIER + '(?=[\(])') },
-      { 'className': 'variable.constant', 'match': /\b(const|global)\b/ },
+      {
+        'match': [
+          /\b(const|global)\b/,
+          /\s+/,
+          /\w+/,  // in real world this is just a type, but we allow any text
+          /\s+/,
+          IDENTIFIER,
+        ],
+        'scope': {
+          1: 'keyword',
+          5: 'variable.constant',
+        },
+      },
+      { 'scope': 'function', 'match': new RegExp(IDENTIFIER + '(?=[\(])') },
 
       // Punctuation
       {
-        'className': 'operator',
+        'scope': 'operator',
         'match': hljs.regex.either(
           /<=>/, />=/, /<=/, /!=/, /==/, /\^>>/, /~>>/,
           />>/, /<</, /\/%/, /\^%/, /~%/, /\^\//, /~\//, /\+=/,
@@ -89,7 +102,7 @@ export default function(hljs) {
           /</, /&/, /\|/, /:/, /\?/,
         ),
       },
-      { 'className': 'puncuation', 'match': /[.;(),\[\]~{}]/ },
+      { 'scope': 'punctuation', 'match': /[.;(),\[\]~{}]/ },
     ]
   }
 }
