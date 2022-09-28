@@ -1,0 +1,14 @@
+<span class="hljs-keyword">variable</span> <span class="hljs-symbol">&#x27;eval</span>
+<span class="hljs-punctuation">{</span> <span class="hljs-symbol">&#x27;eval</span> <span class="hljs-operator">@</span> <span class="hljs-keyword">execute</span> <span class="hljs-punctuation">}</span> <span class="hljs-operator">:</span> <span class="hljs-function">eval</span>
+<span class="hljs-punctuation">{</span> <span class="hljs-keyword">dup</span> <span class="hljs-operator">tuple?</span> <span class="hljs-punctuation">{</span>
+  <span class="hljs-keyword">uncons</span> <span class="hljs-keyword">uncons</span> <span class="hljs-keyword">uncons</span>
+  <span class="hljs-operator">null?</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">abort</span><span class="hljs-string">&quot;three-element list expected&quot;</span>
+  <span class="hljs-keyword">swap</span> eval <span class="hljs-keyword">swap</span> eval <span class="hljs-keyword">rot</span>
+    <span class="hljs-keyword">dup</span> <span class="hljs-symbol">&#x27;+</span> <span class="hljs-operator">eq?</span> <span class="hljs-punctuation">{</span> <span class="hljs-keyword">drop</span> <span class="hljs-operator">+</span> <span class="hljs-punctuation">}</span> <span class="hljs-punctuation">{</span>
+      <span class="hljs-keyword">dup</span> <span class="hljs-symbol">&#x27;-</span> <span class="hljs-operator">eq?</span> <span class="hljs-punctuation">{</span> <span class="hljs-keyword">drop</span> <span class="hljs-operator">-</span> <span class="hljs-punctuation">}</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-symbol">&#x27;*</span> <span class="hljs-operator">eq?</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">abort</span><span class="hljs-string">&quot;unknown operation&quot;</span> <span class="hljs-operator">*</span>
+      <span class="hljs-punctuation">}</span> <span class="hljs-keyword">cond</span>
+    <span class="hljs-punctuation">}</span> <span class="hljs-keyword">cond</span>
+  <span class="hljs-punctuation">}</span> <span class="hljs-keyword">if</span>
+<span class="hljs-punctuation">}</span> <span class="hljs-symbol">&#x27;eval</span> <span class="hljs-operator">!</span>
+<span class="hljs-symbol">&#x27;+</span> <span class="hljs-number">2</span> <span class="hljs-symbol">&#x27;*</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-keyword">list</span> <span class="hljs-number">3</span> <span class="hljs-keyword">list</span> <span class="hljs-keyword">dup</span> <span class="hljs-operator">.l</span> <span class="hljs-keyword">cr</span> eval <span class="hljs-operator">.</span> <span class="hljs-keyword">cr</span>

@@ -1,0 +1,14 @@
+variable 'eval
+{ 'eval @ execute } : eval
+{ dup tuple? {
+  uncons uncons uncons
+  null? not abort"three-element list expected"
+  swap eval swap eval rot
+    dup '+ eq? { drop + } {
+      dup '- eq? { drop - } {
+        '* eq? not abort"unknown operation" *
+      } cond
+    } cond
+  } if
+} 'eval !
+'+ 2 '* 3 4 3 list 3 list dup .l cr eval . cr

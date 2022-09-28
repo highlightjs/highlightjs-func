@@ -102,7 +102,7 @@ export default function(hljs) {
           /</, /&/, /\|/, /:/, /\?/,
         ),
       },
-      { 'scope': 'punctuation', 'match': /[.;(),\[\]~{}]/ },
+      { 'scope': 'punctuation', 'match': /[\.;\(\),\[\]~\{\}]/ },
     ]
   }
 }

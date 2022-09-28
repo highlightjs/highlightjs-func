@@ -1,0 +1,14 @@
+7 4 - .
+
+2 3 4 * + .
+2 3 + 4 * .
+
+1 2 3 4 .s
+rot .s
+
+2 3 < .
+2 3 > .
+
+// More complex structure
+{ "true " "false " rot 0= 1+ pick type 2drop } : ?.
+2 3 < ?. 2 3 = ?. 2 3 > ?.

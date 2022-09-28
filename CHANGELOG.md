@@ -3,6 +3,17 @@
 We follow [Semantic Versions](https://semver.org/).
 
 
+## Version 0.2.0
+
+### Features
+
+- Adds `Fift` support
+
+### Bugfixes
+
+- Fixes `FunC`'s punctuation rules
+
+
 ## Version 0.1.1
 
 ### Bugfixes

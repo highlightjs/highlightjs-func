@@ -1,0 +1,63 @@
+/* Constants */
+0B01 0b1 2constant Temp
+1000000000 constant Gram
+Gram 2 * .
+
+Gram 1000 / constant mGram
+mGram .
+
+i@?+ mgram // comment
+
+"Hello, world!" .s
+"Hello, world!" constant hello
+hello type cr
+
+355 113 2constant pifrac
+
+{ dup =: x dup * =: y } : setxy
+3 setxy x . y . x y + .
+7 setxy x . y . x y + .
+
+{ ."( " @' x . .", " @' y . .") " } : showxy
+3 setxy showxy
+
+// -----
+// Words
+{ dup * } : square
+5 square .
+
+{ dup square square * } : **5
+// 3**5 == 243
+3 **5 .
+
+// ----
+// Variables
+variable x variable y
+{ dup x ! dup * y ! } : setxy
+3 setxy x @ . y @ . x @ y @ + .
+7 setxy x @ . y @ . x @ y @ + .
+{ ."( " x @ . .", " y @ . .") " } : showxy
+3 setxy showxy
+
+variable counter
+{ counter 0! } : reset-counter
+{ counter @ 1+ dup counter ! } : next-counter
+reset-counter next-counter . next-counter . next-counter .
+reset-counter next-counter .
+
+
+// -----
+// 2.8 Integer and fractional constants, or literals
+1000000000 constant Gram
+{ Gram * } : Gram*
+{ Gram swap */r } : Gram*/
+
+{ bl word (number) ?dup 0= abort"not a valid Gram amount"
+  1- { Gram swap */r } { Gram * } cond
+  1 'nop
+} ::_ GR$
+
+{ dup abs <# ’ # 9 times char . hold #s rot sign #>
+  nip -trailing0 } : (.GR)
+{ (.GR) ."GR$" type space } : .GR
+-17239000000 .GR

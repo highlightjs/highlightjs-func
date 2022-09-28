@@ -1,0 +1,16 @@
+// Binary
+b{00011101}
+b{}
+
+// Hex
+// data
+x{2F4d}
+x{EA_}
+x{1d}
+x{}
+
+/* Operators
+   and stuff */
+{ <b x{4A} s, rot 16 u, swap 32 i, .s b> } : mkTest
+17239 -1000000001 mkTest
+<s csr.

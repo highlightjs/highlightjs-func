@@ -1,0 +1,16 @@
+<span class="hljs-comment">// Tripples</span>
+<span class="hljs-operator">|</span> <span class="hljs-number">2</span> <span class="hljs-operator">,</span> <span class="hljs-number">3</span> <span class="hljs-operator">,</span> <span class="hljs-number">9</span> <span class="hljs-operator">,</span> <span class="hljs-operator">.dump</span>
+<span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">9</span> <span class="hljs-keyword">triple</span> <span class="hljs-operator">.dump</span>
+
+<span class="hljs-comment">// Matrix</span>
+<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-keyword">triple</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-keyword">triple</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-keyword">triple</span> <span class="hljs-keyword">triple</span> <span class="hljs-keyword">constant</span> <span class="hljs-variable constant_">Matrix</span>
+Matrix <span class="hljs-operator">.dump</span> <span class="hljs-keyword">cr</span>
+<span class="hljs-operator">|</span> <span class="hljs-number">1</span> <span class="hljs-string">&quot;one&quot;</span> <span class="hljs-keyword">pair</span> <span class="hljs-operator">,</span> <span class="hljs-number">2</span> <span class="hljs-string">&quot;two&quot;</span> <span class="hljs-keyword">pair</span> <span class="hljs-operator">,</span> <span class="hljs-number">3</span> <span class="hljs-string">&quot;three&quot;</span> <span class="hljs-keyword">pair</span> <span class="hljs-operator">,</span> <span class="hljs-operator">.dump</span>
+
+<span class="hljs-comment">// Lists</span>
+<span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-keyword">tuple</span> <span class="hljs-operator">.dump</span> <span class="hljs-keyword">cr</span>
+<span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> <span class="hljs-keyword">list</span> <span class="hljs-keyword">dup</span> <span class="hljs-operator">.dump</span> <span class="hljs-keyword">space</span> <span class="hljs-keyword">dup</span> <span class="hljs-operator">.l</span> <span class="hljs-keyword">cr</span>
+<span class="hljs-string">&quot;test&quot;</span> <span class="hljs-keyword">swap</span> <span class="hljs-keyword">cons</span> <span class="hljs-operator">.l</span> <span class="hljs-keyword">cr</span>
+
+<span class="hljs-comment">// Atoms</span>
+<span class="hljs-symbol">&#x27;+</span> <span class="hljs-number">2</span> <span class="hljs-symbol">&#x27;*</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-keyword">list</span> <span class="hljs-number">3</span> <span class="hljs-keyword">list</span> <span class="hljs-operator">.l</span>

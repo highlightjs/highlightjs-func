@@ -1,0 +1,16 @@
+// Tripples
+| 2 , 3 , 9 , .dump
+2 3 9 triple .dump
+
+// Matrix
+1 2 3 triple 4 5 6 triple 7 8 9 triple triple constant Matrix
+Matrix .dump cr
+| 1 "one" pair , 2 "two" pair , 3 "three" pair , .dump
+
+// Lists
+2 3 9 3 tuple .dump cr
+2 3 9 3 list dup .dump space dup .l cr
+"test" swap cons .l cr
+
+// Atoms
+'+ 2 '* 3 4 3 list 3 list .l

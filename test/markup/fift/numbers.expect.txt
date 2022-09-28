@@ -1,0 +1,14 @@
+<span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-operator">-</span> <span class="hljs-operator">.</span>
+
+<span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-operator">*</span> <span class="hljs-operator">+</span> <span class="hljs-operator">.</span>
+<span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-operator">+</span> <span class="hljs-number">4</span> <span class="hljs-operator">*</span> <span class="hljs-operator">.</span>
+
+<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-operator">.s</span>
+<span class="hljs-keyword">rot</span> <span class="hljs-operator">.s</span>
+
+<span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-operator">&lt;</span> <span class="hljs-operator">.</span>
+<span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-operator">&gt;</span> <span class="hljs-operator">.</span>
+
+<span class="hljs-comment">// More complex structure</span>
+<span class="hljs-punctuation">{</span> <span class="hljs-string">&quot;true &quot;</span> <span class="hljs-string">&quot;false &quot;</span> <span class="hljs-keyword">rot</span> <span class="hljs-operator">0=</span> <span class="hljs-operator">1+</span> <span class="hljs-keyword">pick</span> <span class="hljs-keyword">type</span> <span class="hljs-number">2</span><span class="hljs-keyword">drop</span> <span class="hljs-punctuation">}</span> <span class="hljs-operator">:</span> ?.
+<span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-operator">&lt;</span> ?. <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-operator">=</span> ?. <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-operator">&gt;</span> ?.
