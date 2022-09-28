@@ -1,8 +1,9 @@
-# `highlight.js` syntax definition for `FunC`
+# `highlight.js` syntax definition for `FunC` and `Fift`
 
 [![test](https://github.com/highlightjs/highlightjs-func/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/highlightjs/highlightjs-func/actions/workflows/test.yml)
 
 - For more about `FunC`, see https://ton.org/docs
+- For more about `Fift`, see https://ton.org/fiftbase.pdf
 - For more about `highlight.js`, see https://highlightjs.org/
 
 ### Usage
@@ -17,7 +18,7 @@ npm install highlightjs highlightjs-func
 import hljs from 'highlight.js'
 import hljsDefine from 'highlightjs-func'
 
-hljsDefine(hljs)  // Install language definitions
+hljsDefine(hljs)  // Installs all language definitions
 // Now, do your thing!
 ```
 

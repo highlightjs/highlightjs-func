@@ -1,0 +1,16 @@
+<span class="hljs-comment">// Binary</span>
+<span class="hljs-symbol">b{00011101}</span>
+<span class="hljs-symbol">b{}</span>
+
+<span class="hljs-comment">// Hex</span>
+<span class="hljs-comment">// data</span>
+<span class="hljs-symbol">x{2F4d}</span>
+<span class="hljs-symbol">x{EA_}</span>
+<span class="hljs-symbol">x{1d}</span>
+<span class="hljs-symbol">x{}</span>
+
+<span class="hljs-comment">/* Operators
+   and stuff */</span>
+<span class="hljs-punctuation">{</span> <span class="hljs-operator">&lt;b</span> <span class="hljs-symbol">x{4A}</span> <span class="hljs-operator">s,</span> <span class="hljs-keyword">rot</span> <span class="hljs-number">16</span> <span class="hljs-operator">u,</span> <span class="hljs-keyword">swap</span> <span class="hljs-number">32</span> <span class="hljs-operator">i,</span> <span class="hljs-operator">.s</span> <span class="hljs-operator">b&gt;</span> <span class="hljs-punctuation">}</span> <span class="hljs-operator">:</span> <span class="hljs-function">mkTest</span>
+<span class="hljs-number">17239</span> <span class="hljs-operator">-</span><span class="hljs-number">1000000001</span> mkTest
+<span class="hljs-operator">&lt;s</span> <span class="hljs-operator">csr.</span>
