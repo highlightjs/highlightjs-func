@@ -1,0 +1,8 @@
+// Not syntax here is valid, but we only check math operators.
+
+2 * 2
+2 * 2 == 4
+2 / 3 != 1
+5 + 66 < 100
+4 - 90 >= -0
+x = -2 ^ 3 - ~3

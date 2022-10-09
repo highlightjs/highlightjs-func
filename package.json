@@ -1,14 +1,17 @@
 {
   "name": "highlightjs-func",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "highlight.js syntax definition for TON's FunC language",
   "main": "src/index.js",
   "type": "module",
   "files": [
+    "src/**/*.js",
     "dist/func.min.js",
     "dist/func.es.min.js",
     "dist/fift.min.js",
-    "dist/fift.es.min.js"
+    "dist/fift.es.min.js",
+    "dist/tlb.min.js",
+    "dist/tlb.es.min.js"
   ],
   "engines": {
     "node": ">=12.0.0"
@@ -16,6 +19,7 @@
   "keywords": [
     "FunC",
     "Fift",
+    "TL-B",
     "TON",
     "Telegram",
     "highlight.js",

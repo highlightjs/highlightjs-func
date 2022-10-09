@@ -3,6 +3,17 @@
 We follow [Semantic Versions](https://semver.org/).
 
 
+## Version 0.3.0
+
+### Features
+
+- Adds `TL-B` support
+
+### Bugfixes
+
+- Fixes `files` field in `package.json` to include `src/`
+
+
 ## Version 0.2.0
 
 ### Features
