@@ -1,9 +1,10 @@
-# `highlight.js` syntax definition for `FunC` and `Fift`
+# `highlight.js` syntax definition for `FunC`, `Fift`, and `TL-B`
 
 [![test](https://github.com/highlightjs/highlightjs-func/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/highlightjs/highlightjs-func/actions/workflows/test.yml)
 
 - For more about `FunC`, see https://ton.org/docs
 - For more about `Fift`, see https://ton.org/fiftbase.pdf
+- For more about `TL-B`, see https://github.com/andreypfau/TL-B-docs
 - For more about `highlight.js`, see https://highlightjs.org/
 
 ### Usage

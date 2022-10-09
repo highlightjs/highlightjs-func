@@ -1,0 +1,12 @@
+// Correct tags:
+some#3f5476ca
+some$0101
+some
+some#_
+some$_
+
+/*
+ * Wrong:
+ */
+some#
+some$

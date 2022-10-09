@@ -1,0 +1,8 @@
+<span class="hljs-comment">// Not syntax here is valid, but we only check math operators.</span>
+
+<span class="hljs-number">2</span> <span class="hljs-operator">*</span> <span class="hljs-number">2</span>
+<span class="hljs-number">2</span> <span class="hljs-operator">*</span> <span class="hljs-number">2</span> <span class="hljs-operator">==</span> <span class="hljs-number">4</span>
+<span class="hljs-number">2</span> <span class="hljs-operator">/</span> <span class="hljs-number">3</span> <span class="hljs-operator">!=</span> <span class="hljs-number">1</span>
+<span class="hljs-number">5</span> <span class="hljs-operator">+</span> <span class="hljs-number">66</span> <span class="hljs-operator">&lt;</span> <span class="hljs-number">100</span>
+<span class="hljs-number">4</span> <span class="hljs-operator">-</span> <span class="hljs-number">90</span> <span class="hljs-operator">&gt;=</span> <span class="hljs-operator">-</span><span class="hljs-number">0</span>
+<span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-operator">-</span><span class="hljs-number">2</span> <span class="hljs-operator">^</span> <span class="hljs-number">3</span> <span class="hljs-operator">-</span> <span class="hljs-operator">~</span><span class="hljs-number">3</span>

@@ -1,0 +1,12 @@
+<span class="hljs-comment">// Correct tags:</span>
+<span class="hljs-variable">some</span><span class="hljs-symbol">#3f5476ca</span>
+<span class="hljs-variable">some</span><span class="hljs-symbol">$0101</span>
+<span class="hljs-variable">some</span>
+<span class="hljs-variable">some</span><span class="hljs-symbol">#_</span>
+<span class="hljs-variable">some</span><span class="hljs-symbol">$_</span>
+
+<span class="hljs-comment">/*
+ * Wrong:
+ */</span>
+<span class="hljs-variable">some</span><span class="hljs-symbol">#</span>
+<span class="hljs-variable">some</span><span class="hljs-symbol">$</span>

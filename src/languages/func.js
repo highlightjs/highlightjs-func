@@ -103,6 +103,6 @@ export default function(hljs) {
         ),
       },
       { 'scope': 'punctuation', 'match': /[\.;\(\),\[\]~\{\}]/ },
-    ]
+    ],
   }
 }
