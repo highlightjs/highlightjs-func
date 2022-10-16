@@ -1,6 +1,6 @@
 {
   "name": "highlightjs-func",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "highlight.js syntax definition for TON's FunC language",
   "main": "src/index.js",
   "type": "module",

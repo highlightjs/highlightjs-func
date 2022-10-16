@@ -22,8 +22,8 @@ export default function(hljs) {
         // These are special cased, because they are used way too often:
         'Type', 'Bool', 'Unit', 'Maybe', 'Either', 'Both', 'Cell',
         // Not mentioned, but also widely used:
-        'int8', 'int16', 'int32', 'int64',
         'uint8', 'uint15', 'uint16', 'uint32', 'uint63', 'uint64',
+        'int8', 'int16', 'int32', 'int64',
         'bits256', 'bits512',
       ],
       'built_in': [],
@@ -43,7 +43,6 @@ export default function(hljs) {
       {
         'scope': 'symbol',
         'match': hljs.regex.either(
-          /#0x[0-9a-f]*_?/,
           /#[0-9a-f]*_?/,
           /\$[01]*_?/,
           /##/,

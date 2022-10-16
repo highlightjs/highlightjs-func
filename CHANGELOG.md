@@ -3,6 +3,13 @@
 We follow [Semantic Versions](https://semver.org/).
 
 
+## Version 0.3.1
+
+### Bugfixes
+
+- Several fixes to `TL-B` grammar
+
+
 ## Version 0.3.0
 
 ### Features
