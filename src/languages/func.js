@@ -13,7 +13,14 @@ const IDENTIFIER = '(?!")(`([^`]+)`|' +
   '(?![_`{}]))([^;,\\[\\]\\(\\)\\s~.]+))'
 
 const STRING = /\"[^\n\"]+\"[Hhcusa]?/
-const NUMBER = /(-?(?!_)([\d_]+|0x[\d_a-fA-F]+)|0b[1_0]+)(?<!_)(?=[\s\)\],;])/
+let NUMBER;
+
+try {
+  NUMBER = /(-?(?!_)([\d_]+|0x[\d_a-fA-F]+)|0b[1_0]+)(?<!_)(?=[\s\)\],;])/
+} catch(e) {
+  // some browsers don't support lookbehind
+  NUMBER = /\d/; // TODO
+}
 
 export default function(hljs) {
   return {
