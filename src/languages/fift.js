@@ -213,7 +213,7 @@ export default function(hljs) {
           /\|\+/, /\|/, /\|_/,
 
           // Should be the last:
-          /(?<=\s)\.(?=\s)/,
+          new RegExp("(?<=\\s)\\.(?=\\s)"),
         ),
       },
 

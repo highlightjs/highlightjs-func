@@ -16,7 +16,7 @@ const STRING = /\"[^\n\"]+\"[Hhcusa]?/
 let NUMBER;
 
 try {
-  NUMBER = /(-?(?!_)([\d_]+|0x[\d_a-fA-F]+)|0b[1_0]+)(?<!_)(?=[\s\)\],;])/
+  NUMBER = new RegExp("(-?(?!_)([\\d_]+|0x[\\d_a-fA-F]+)|0b[1_0]+)(?<!_)(?=[\\s\\)\\],;])");
 } catch(e) {
   // some browsers don't support lookbehind
   NUMBER = /\d/; // TODO
